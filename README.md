@@ -20,8 +20,8 @@ Este es un backend intermedio (proxy API) que consume la API oficial de Clash Ro
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tuusuario/clash-api-proxy.git
-cd clash-api-proxy
+git clone https://github.com/TuUsuario/api-clash-backend.git
+cd api-clash-backend
 ```
 
 2. Instala las dependencias:
@@ -52,13 +52,6 @@ Tu API estará corriendo en `http://localhost:3000/api`.
 ```
 .env
 ```
-
-## 📱 Endpoints disponibles
-
-- `/api/cards`
-- `/api/players/:tag`
-- `/api/clans/:tag`
-- *(puedes agregar más según necesidad)*
 
 ## ⚠️ Disclaimer
 
