@@ -31,3 +31,5 @@ router.get('/:tournamentsTag', async (req, res) => {
         });
     }
 });
+
+module.exports = router;

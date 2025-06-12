@@ -43,3 +43,5 @@ router.get('/:playerTag/battlelog', async (req, res) => {
         });
     }
 });
+
+module.exports = router;

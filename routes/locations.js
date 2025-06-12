@@ -188,3 +188,5 @@ router.get('/global/rankings/tournaments/:tournamentsTag', async (req, res) => {
         });
     }
 });
+
+module.exports = router;

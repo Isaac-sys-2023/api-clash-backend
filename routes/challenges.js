@@ -13,3 +13,5 @@ router.get('/', async (res) => {
         });
     }
 });
+
+module.exports = router;
