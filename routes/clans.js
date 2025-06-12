@@ -66,4 +66,49 @@ router.get('/:clanTag/currentwar', async (req, res) => {
     }
 });
 
+// GET /clans/:clanTag
+router.get('/:clanTag', async (req, res) => {
+    const { clanTag } = req.params; //Parametro obligatorio
+
+    try {
+        const response = await API.get(`/clans/%23${clanTag}`);
+        res.json(response.data);
+    } catch (error) {
+        res.status(error.response?.status || 500).json({
+            message: error.response?.data?.message || 'Error fetching clan'
+        });
+    }
+});
+
+// GET /clans/:clanTag/members
+router.get('/:clanTag/members', async (req, res) => {
+    const { clanTag } = req.params; //Parametro obligatorio
+    const { limit, after, before } = req.query; //Parametros no obligatorios
+
+    try {
+        const response = await API.get(`/clans/%23${clanTag}/members`, {
+            params: { limit, after, before }
+        });
+        res.json(response.data);
+    } catch (error) {
+        res.status(error.response?.status || 500).json({
+            message: error.response?.data?.message || 'Error fetching members'
+        });
+    }
+});
+
+// GET /clans/:clanTag/currentriverrace
+router.get('/:clanTag/currentriverrace', async (req, res) => {
+    const { clanTag } = req.params; //Parametro obligatorio
+
+    try {
+        const response = await API.get(`/clans/%23${clanTag}/currentriverrace`);
+        res.json(response.data);
+    } catch (error) {
+        res.status(error.response?.status || 500).json({
+            message: error.response?.data?.message || 'Error fetching currentriverrace'
+        });
+    }
+});
+
 module.exports = router;
