@@ -156,12 +156,12 @@ router.get('/:locationId', async (req, res) => {
 });
 
 // GET /locations/:locationId/pathoflegends/players
-router.get('/:locationId/pathoflegends/players', async (req, res) => {
+router.get('/:locationId/pathoflegend/players', async (req, res) => {
     const { locationId } = req.params; //Parametro obligatorio
     const { limit, after, before } = req.query; //Parametros no obligatorios
 
     try {
-        const response = await API.get(`/locations/${locationId}/pathoflegends/players`, {
+        const response = await API.get(`/locations/${locationId}/pathoflegend/players`, {
             params: { limit, after, before }
         });
         res.json(response.data);
