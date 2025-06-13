@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     const { limit, after, before } = req.query; //Parametros no obligatorios
 
     try {
-        const response = await API.get(`/clans`, {
+        const response = await API.get(`/cards`, {
             params: { limit, after, before }
         });
         res.json(response.data);
