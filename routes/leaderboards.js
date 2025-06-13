@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET /leaderboard/:leaderboardId
-router.get('/', async (req, res) => {
+router.get('/:leaderboardId', async (req, res) => {
     const { leaderboardId } = req.params; //Parametros obligatorios
     const { limit, after, before } = req.query; //Parametros no obligatorios
 
