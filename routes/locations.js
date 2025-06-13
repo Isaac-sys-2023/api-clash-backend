@@ -102,7 +102,7 @@ router.get('/global/seasons/:seasonId/rankings/players', async (req, res) => {
 });
 
 // GET /locations/global/seasons
-router.get('/global/seasons', async (res) => {
+router.get('/global/seasons', async (req, res) => {
     try {
         const response = await API.get(`/locations/global/seasons`);
         res.json(response.data);
@@ -130,7 +130,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET /locations/global/seasonsV2
-router.get('/global/seasonsV2', async (res) => {
+router.get('/global/seasonsV2', async (req, res) => {
     try {
         const response = await API.get(`/locations/global/seasonsV2`);
         res.json(response.data);

@@ -3,7 +3,7 @@ const router = express.Router();
 const API = require('../utils/clashApi');
 
 // GET /globaltournaments
-router.get('/', async (res) => {
+router.get('/', async (req, res) => {
     try {
         const response = await API.get(`/globaltournaments`);
         res.json(response.data);

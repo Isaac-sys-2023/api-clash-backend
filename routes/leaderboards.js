@@ -3,7 +3,7 @@ const router = express.Router();
 const API = require('../utils/clashApi');
 
 // GET /leaderboards
-router.get('/', async (res) => {
+router.get('/', async (req, res) => {
     try {
         const response = await API.get(`/leaderboards`);
         res.json(response.data);
