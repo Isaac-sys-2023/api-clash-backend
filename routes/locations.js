@@ -121,7 +121,19 @@ router.get('/', async (req, res) => {
         const response = await API.get(`/locations`, {
             params: { limit, after, before }
         });
-        res.json(response.data);
+
+        const itemsConBanderas = response.data.items.map(location => ({
+            ...location,
+            flagUrl: location.isCountry
+                ? `https://flagcdn.com/w320/${location.countryCode?.toLowerCase()}.png`
+                : null
+        }));
+
+        // res.json(response.data);
+        res.json({
+            ...response.data,
+            items: itemsConBanderas
+        });
     } catch (error) {
         res.status(error.response?.status || 500).json({
             message: error.response?.data?.message || 'Error fetching a list of locations'
