@@ -1,16 +1,16 @@
 
 # Clash Royale API Proxy (con RoyaleAPI como intermediario)
 
-Este backend actúa como **API intermedia** entre una aplicación Flutter o cualquier tipo de aplicacion que consuma APIs y los datos del juego **Clash Royale**. En lugar de conectarse directamente con la API oficial de Supercell, este proxy se comunica a través de **RoyaleAPI**, un servicio que provee una IP estática y simplifica el acceso a los datos del juego.
+Este backend actúa como **API intermedia** entre una aplicación de React Native o cualquier tipo de aplicacion que consuma APIs y los datos del juego **Clash Royale**. En lugar de conectarse directamente con la API oficial de Supercell, este proxy se comunica a través de **RoyaleAPI**, un servicio que provee una IP estática y simplifica el acceso a los datos del juego. Esta ha sido deployada en onRender en [https://api-clash-backend.onrender.com](https://api-clash-backend.onrender.com) para su uso mediante peticiones http al servidor.
 
 > ✅ Esto permite evitar restricciones de IP dinámica impuestas por la API oficial de Clash Royale.
 
 ## 📌 Arquitectura del sistema
 
 ```text
-[Flutter App] 
+[React Native App] 
      ↓ 
-[Tu API en Render] (Este proyecto)
+[Este backend]
      ↓ 
 [RoyaleAPI (proxy externo)] 
      ↓ 
